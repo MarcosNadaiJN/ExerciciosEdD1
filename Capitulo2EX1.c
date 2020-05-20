@@ -9,13 +9,16 @@ struct plivro{
     int codigo[tamanho];
     char tlivro[50];
     char autor[50];
-    int ini;
-    int fim;
 };
 
-struct plivro pilha;
+struct ppilha{
+    int inicio;
+    int fim;
+}
+
+struct plivro livro;
+struct ppilha pilha;
 int op=-1;
-char ttlivro, aautor;
 
 void empilhamento();
 void desempilhamento();
@@ -24,7 +27,7 @@ void menu();
 
 int main(){
     setlocale(LC_ALL,"");
-    pilha.ini = 0;
+    pilha.inicio = 0;
     pilha.fim = 0;
     while (op != 0)
     {
@@ -59,29 +62,27 @@ void empilhamento(){
         system("pause");
     } else {
         printf("Digite o Titulo do Livro: ");
-        scanf("%s", &ttlivro);
-        strcpy(pilha.tlivro[pilha.fim], ttlivro);
+        scanf("%s", );
         fflush(stdin);
         printf("Digite o Autor do Livro: ");
-        scanf("%s", &aautor);
-        strcpy(pilha.autor[pilha.fim], aautor);
+        scanf("%s", );
         fflush(stdin);
         printf("Digite o Codigo do Livro: ");
-        scanf("%d", &pilha.codigo[pilha.fim]);
+        scanf("%d", &);
         fflush(stdin);
         pilha.fim++;
     }
 }
 
 void desempilhamento(){
-    if (pilha.fim == pilha.ini)
+    if (pilha.fim == pilha.inicio)
     {
         printf("A Pilha está vazia");
     }else
     {
-        pilha.autor[pilha.fim-1] = 0;
-        pilha.tlivro[pilha.fim-1] = 0;
-        pilha.codigo[pilha.fim-1] = 0;
+        //pilha.autor[pilha.fim-1] = 0;
+        //pilha.tlivro[pilha.fim-1] = 0;
+        //pilha.codigo[pilha.fim-1] = 0;
         pilha.fim--;
     }
 }
@@ -90,8 +91,8 @@ void mostra_pilha(){
     int i;
     for (int i = 0; i < tamanho; i++)
     {
-        printf("Titulo: %c \n",pilha.tlivro[i]);
-        printf("Autor: %c \n", pilha.autor[i]);
-        printf("Codigo: %d \n\n\n", pilha.codigo[i]);
+        //printf("Titulo: %c \n",pilha.tlivro[i]);
+        //printf("Autor: %c \n", pilha.autor[i]);
+        //printf("Codigo: %d \n\n\n", pilha.codigo[i]);
     }
 }
