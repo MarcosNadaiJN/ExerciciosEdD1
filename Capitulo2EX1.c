@@ -12,9 +12,10 @@ struct plivro{
 };
 
 struct ppilha{
+    struct plivro dados[tamanho];
     int inicio;
     int fim;
-}
+};
 
 struct plivro livro;
 struct ppilha pilha;
@@ -62,13 +63,13 @@ void empilhamento(){
         system("pause");
     } else {
         printf("Digite o Titulo do Livro: ");
-        scanf("%s", );
+        scanf("%s", pilha.dados[pilha.fim].tlivro);
         fflush(stdin);
         printf("Digite o Autor do Livro: ");
-        scanf("%s", );
+        scanf("%s", pilha.dados[pilha.fim].autor);
         fflush(stdin);
         printf("Digite o Codigo do Livro: ");
-        scanf("%d", &);
+        scanf("%d", &pilha.dados[pilha.fim].codigo);
         fflush(stdin);
         pilha.fim++;
     }
@@ -78,11 +79,11 @@ void desempilhamento(){
     if (pilha.fim == pilha.inicio)
     {
         printf("A Pilha está vazia");
-    }else
-    {
-        //pilha.autor[pilha.fim-1] = 0;
-        //pilha.tlivro[pilha.fim-1] = 0;
-        //pilha.codigo[pilha.fim-1] = 0;
+        system("pause");
+    }else{
+        pilha.dados[pilha.fim-1].codigo = 0;
+        strcpy(pilha.dados[pilha.fim-1].tlivro, "");
+        strcpy(pilha.dados[pilha.fim-1].autor, "");
         pilha.fim--;
     }
 }
@@ -91,8 +92,8 @@ void mostra_pilha(){
     int i;
     for (int i = 0; i < tamanho; i++)
     {
-        //printf("Titulo: %c \n",pilha.tlivro[i]);
-        //printf("Autor: %c \n", pilha.autor[i]);
-        //printf("Codigo: %d \n\n\n", pilha.codigo[i]);
+        printf("Titulo: %c \n",pilha.dados[i].tlivro);
+        printf("Autor: %c \n", pilha.dados[i].autor);
+        printf("Codigo: %d \n\n\n", pilha.dados[i].codigo);
     }
 }
