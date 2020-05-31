@@ -85,7 +85,7 @@ void desempilhamento(){
         pilha.fim--;
     }
 }
-
+//teste
 void mostra_pilha(){
     int i;
     for (int i = 0; i < tamanho; i++)
